@@ -8,6 +8,8 @@
 *azure-pipelines.yml
 **/.vs/
 *CredentialHelper.cs
+*/bin/
+*/obj/
 
 .vs/
 
