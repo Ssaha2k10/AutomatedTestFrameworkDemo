@@ -13,7 +13,7 @@ This repository contains a simple test framework implemented in C# with Playwrig
 - Cross-platform support
 - Lightweight and easy to use
 - Open source and community-driven
-- Continuous integration setup with GitHub Actions
+  
 
 ## Prerequisites
 Before running the project, ensure you have the following installed:
@@ -24,8 +24,7 @@ Before running the project, ensure you have the following installed:
 ## Setup Instructions
 1. Clone the repository:
 ````````
-git clone https://github.com/Ssaha2k10/AutomatedTestFramework
-cd testframework
+git clone https://github.com/Ssaha2k10/AutomatedTestFrameworkDemo.git.
 ````````
 2. Restore NuGet packages:
 ````````
