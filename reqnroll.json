@@ -1,0 +1,15 @@
+﻿{
+  "language": {
+    "feature": "en"
+  },
+  "bindingCulture": {
+    "name": "en-us"
+  },
+  "testExecutionOrder": [
+    "Features/Login.feature",
+    "Features/Logout.feature",
+    "Features/Product.feature",
+    "Features/Checkout.feature"
+  ]
+}
+
