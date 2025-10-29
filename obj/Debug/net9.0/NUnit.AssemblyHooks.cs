@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 [GeneratedCode("Reqnroll", "3.1.2")]
 [global::NUnit.Framework.SetUpFixture]
-public static class AutomatedTestFramework_Slk_NUnitAssemblyHooks
+public static class AutomatedTestFramework_Slick_NUnitAssemblyHooks
 {
     [global::NUnit.Framework.OneTimeSetUp]
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static async Task AssemblyInitializeAsync()
     {
-        var currentAssembly = typeof(AutomatedTestFramework_Slk_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(AutomatedTestFramework_Slick_NUnitAssemblyHooks).Assembly;
         await global::Reqnroll.TestRunnerManager.OnTestRunStartAsync(currentAssembly);
     }
 
@@ -22,7 +22,7 @@ public static class AutomatedTestFramework_Slk_NUnitAssemblyHooks
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static async ValueTask AssemblyCleanupAsync()
     {
-        var currentAssembly = typeof(AutomatedTestFramework_Slk_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(AutomatedTestFramework_Slick_NUnitAssemblyHooks).Assembly;
         await global::Reqnroll.TestRunnerManager.OnTestRunEndAsync(currentAssembly);
     }
 }

@@ -11,7 +11,7 @@
 #region Designer generated code
 #pragma warning disable
 using Reqnroll;
-namespace AutomatedTestFramework_Slk.Features
+namespace AutomatedTestFramework_Slick.Features
 {
     
     
