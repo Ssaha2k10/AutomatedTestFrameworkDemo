@@ -8,7 +8,7 @@ using static Microsoft.Playwright.Assertions;
 
 namespace AutomatedTestFramework.Pages
 {
-    public class CheckOutPage
+    public class BookingPage
     {
         private readonly IPage _page;
         private readonly string _url;
@@ -22,7 +22,7 @@ namespace AutomatedTestFramework.Pages
         private ILocator SummaryPage => _page.Locator(".summary_info");
         private ILocator FinishBtn => _page.GetByText("FINISH");
 
-        public CheckOutPage(IPage page)
+        public BookingPage(IPage page)
         {
             _page = page;
             _url = TestHooks.baseUrl;

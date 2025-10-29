@@ -29,13 +29,13 @@ namespace AutomatedTestFramework.StepDefinition
         public async Task WhenTheUserEntersValidCredentialsAnd(string username, string password)
         {
             await _loginPage.SuccessfulLoginWithLoginBtn(username, password);
-        }
+            }
 
 
         [Then("the user should be redirected to the product page")]
         public async Task ThenTheUserShouldBeRedirectedToTheProductPage()
         {
-            await _loginPage.ViewProductPage();
+            await _loginPage.ViewBookingPage();
 
         }
 
@@ -50,6 +50,24 @@ namespace AutomatedTestFramework.StepDefinition
         {
             await _loginPage.ViewErrorMessage();
         }
+
+        [When("the user enters the pin code")]
+        public async Task WhenTheUserEntersThePinCode()
+        {
+            await _loginPage.AccuratePinEntry();
+
+        }
+
+        [When("the user enters incorrect pin code {string}")]
+        public async Task WhenTheUserEntersIncorrectPinCode(string pin)
+        {
+            await _loginPage.InaccuratePinEntry(pin);
+        }
+
+
+
+
+
 
     }
 }

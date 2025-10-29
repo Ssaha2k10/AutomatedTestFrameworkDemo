@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using static Microsoft.Playwright.Assertions;
+using static Microsoft.Playwright.LocatorFilterOptions;
 using Reqnroll;
 using System.Threading.Tasks;
 
@@ -9,11 +10,11 @@ namespace AutomatedTestFramework.Pages
     {
         private readonly IPage _page;
         private readonly string _url;
-        private ILocator Logo => _page.Locator(".login_logo");
-        private ILocator UsernameField => _page.Locator("input[data-test='username']");
-        private ILocator PasswordField => _page.Locator("input[data-test='password']");
-        private ILocator LoginBtn => _page.Locator("#login-button");
-        private ILocator InventoryPage => _page.Locator("#inventory_container").First;
+        private ILocator UsernameField => _page.Locator("input[data-pw-id='UserEmail']");
+        private ILocator PasswordField => _page.Locator("input[data-pw-id='PasswordInput']");
+        private ILocator LoginBtn => _page.Locator("button[data-pw-id ='login']");
+        
+        
 
 
 
@@ -36,26 +37,41 @@ namespace AutomatedTestFramework.Pages
             }
         }
 
-        public async Task ViewHomePageLogo()
-        {
-            await Expect(Logo).ToBeVisibleAsync();
-            await Expect(UsernameField).ToBeVisibleAsync();
-            await Expect(PasswordField).ToBeVisibleAsync();
-        }
+
 
         public async Task SuccessfulLoginWithEnter(string username, string password)
         {
                 username = CredentialsHelper.Username;
                 password = CredentialsHelper.Password;
+                
 
             await UsernameField.FillAsync(username);
             await PasswordField.FillAsync(password);
             await _page.Keyboard.PressAsync("Enter");
            
         }
-        public async Task ViewProductPage()
-        { 
-            await Expect(InventoryPage).ToBeVisibleAsync();
+            public async Task AccuratePinEntry()
+        {
+            string pin = CredentialsHelper.Pin;
+
+
+            foreach (var ch in pin)
+            {
+                await _page.GetByRole(AriaRole.Button, new() { Name = ch.ToString() }).ClickAsync();
+                await _page.WaitForTimeoutAsync(100);
+            }
+
+        }
+
+        public async Task InaccuratePinEntry(string pin)
+        {
+          
+            foreach (var ch in pin)
+            {
+                await _page.GetByRole(AriaRole.Button, new() { Name = ch.ToString() }).ClickAsync();
+                await _page.WaitForTimeoutAsync(100);
+            }
+
         }
 
         public async Task SuccessfulLoginWithLoginBtn(string username, string password)
@@ -71,20 +87,16 @@ namespace AutomatedTestFramework.Pages
             
         }
 
-        public async Task FailedLogin(string username, string password)
-
-        {
-           
-            await UsernameField.FillAsync(username);
-            await PasswordField.FillAsync(password);
-            await LoginBtn.ClickAsync();
-            
-        }
-
         public async Task ViewErrorMessage()
         {
-            var errorMessage = _page.Locator("h3[data-test='error']");
+            var errorMessage = _page.Locator(".PinForm_errorContainer__AjwKp");
             await Expect(errorMessage).ToBeVisibleAsync();
+        }
+
+        public async Task ViewBookingPage()
+        {
+            var bookingPage = _page.Locator(".scheduler");
+            await Expect(bookingPage).ToBeVisibleAsync();
         }
 
     }

@@ -26,10 +26,10 @@ public class TestHooks
 
         baseUrl = env switch
         {
-            "DEV" => "https://www.saucedemo.com/v1/index.html",
-            "QA" => "https://www.saucedemo.com/v1/index.html",
-            "PROD" => "https://www.saucedemo.com/v1/index.html",
-            _ => "https://www.saucedemo.com/v1/index.html"
+            "DEV" => "https://staging-salon.getslick.com/salon/#/salon/1620/day/today",
+            "QA" => "https://staging-salon.getslick.com/salon/#/salon/1620/day/today",
+            "PROD" => "https://staging-salon.getslick.com/salon/#/salon/1620/day/today",
+            _ => "https://staging-salon.getslick.com/salon/#/salon/1620/day/today"
         };
         playwright = await Playwright.CreateAsync();
         browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
