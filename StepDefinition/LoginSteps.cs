@@ -39,12 +39,7 @@ namespace AutomatedTestFramework.StepDefinition
 
         }
 
-        [When("the user enters invalid credentials {string} and {string}")]
-        public async Task WhenTheUserEntersInvalidCredentials(string username, string password)
-        {
-            await _loginPage.FailedLogin(username, password);
-        }
-
+       
         [Then("an error message should be displayed")]
         public async Task ThenAnErrorMessageShouldBeDisplayed()
         {

@@ -1,11 +1,7 @@
-﻿using Reqnroll;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutomatedTestFramework.Pages;
+﻿using AutomatedTestFramework.Pages;
 using Microsoft.Playwright;
+using Reqnroll;
+
 
 namespace AutomatedTestFramework.StepDefinition
 {
@@ -20,220 +16,102 @@ namespace AutomatedTestFramework.StepDefinition
             _page = page;
 
         }
-        [Given("the user is on the Slick Calendar page")]
-        public async Task GivenTheUserIsOnTheSlickCalendarPage()
-        {
-            await _bookingPage.NavigateAsync();
-        }
+        
 
-        [Given("the user is logged into the application")]
-        public void GivenTheUserIsLoggedIntoTheApplication()
+        [Given(@"the user is logged into the application")]
+        public async Task GivenTheUserIsLoggedIntoTheApplication()
         {
-            throw new PendingStepException();
+            var loginPage = new LoginPage(_page);
+            await loginPage.NavigateAsync();
+            await loginPage.SuccessfulLoginWithLoginBtn(CredentialsHelper.Username, CredentialsHelper.Password);
+            await loginPage.AccuratePinEntry();
         }
 
 
         [Given("the user is able to view the booking page")]
-        public void GivenTheUserIsAbleToViewTheBookingPage()
+        public async Task GivenTheUserIsAbleToViewTheBookingPage()
         {
-            throw new PendingStepException();
+            await _bookingPage.ViewBookingPage();
         }
 
         [When("the user clicks on the {string} button")]
-        public void WhenTheUserClicksOnTheButton(string buttonName)
+        public async Task WhenTheUserClicksOnTheButton(string buttonName)
         {
-            throw new PendingStepException();
+            await _bookingPage.ClickButton(buttonName);
         }
 
         [When("selects the {string} from the dropdown menu")]
-        public void WhenSelectsTheFromTheDropdownMenu(string option)
+        public async Task WhenSelectsTheFromTheDropdownMenu(string option)
         {
-            throw new PendingStepException();
+            await _bookingPage.SelectFromDropdown(option);
         }
 
         [When("enters {string} in the search box")]
-        public void WhenEntersInTheSearchBox(string text)
+        public async Task WhenEntersInTheSearchBox(string text)
         {
-            throw new PendingStepException();
+            await _bookingPage.SearchClient(text);
         }
 
         [When("selects the client {string} from the search results")]
-        public void WhenSelectsTheClientFromTheSearchResults(string text)
+        public async Task WhenSelectsTheClientFromTheSearchResults(string text)
         {
-            throw new PendingStepException();
+            await _bookingPage.SelectClientFromSearchResults(text);
         }
 
-        [Then("the user should see the list of services available for {string}")]
-        public void ThenTheUserShouldSeeTheListOfServicesAvailableFor(string text)
+        [Then("the user should see the list of services available")]
+        public async Task ThenTheUserShouldSeeTheListOfServicesAvailable()
         {
-            throw new PendingStepException();
+            await _bookingPage.ViewAvailableServices();
         }
 
         [When("the user selects the service {string} from the list")]
-        public void WhenTheUserSelectsTheServiceFromTheList(string serviceCat)
+        public async Task WhenTheUserSelectsTheServiceFromTheList(string serviceCat)
         {
-            throw new PendingStepException();
+            await _bookingPage.SelectServiceCategory(serviceCat);
         }
 
         [When("the user selects the {string} from the available services")]
-        public void WhenTheUserSelectsTheFromTheAvailableServices(string serviceName)
+        public async Task WhenTheUserSelectsTheFromTheAvailableServices(string serviceName)
         {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the calendar and the option to select a stylist for booking")]
-        public void ThenTheUserShouldSeeTheCalendarAndTheOptionToSelectAStylistForBooking()
-        {
-            throw new PendingStepException();
-        }
-
-        [When("the user selects the calendar")]
-        public void WhenTheUserSelectsTheCalendar()
-        {
-            throw new PendingStepException();
+            await _bookingPage.SelectServiceFromList(serviceName);
         }
 
         [When("chooses the desired date {string} for the booking and clicks {string}")]
-        public void WhenChoosesTheDesiredDateForTheBookingAndClicks(string p0, string button)
+        public async Task WhenChoosesTheDesiredDateForTheBookingAndClicks(string p0, string button)
         {
-            throw new PendingStepException();
+            await _bookingPage.SelectDate(p0);
+            await _bookingPage.ClickButton(button);
         }
 
-        [Then("the calendar should collapse and show the selected date {string}")]
-        public void ThenTheCalendarShouldCollapseAndShowTheSelectedDate(string date)
+        [When("the user selects the stylist for the booking {string}")]
+        public async Task WhenTheUserSelectsTheStylistForTheBooking(string name)
         {
-            throw new PendingStepException();
+            await _bookingPage.SelectStylist(name);
         }
 
-        [When("the user clicks to select the stylist for the booking")]
-        public void WhenTheUserClicksToSelectTheStylistForTheBooking()
+        [Then("the user should see the selected stylist {string} displayed for the booking")]
+        public async Task ThenTheUserShouldSeeTheSelectedStylistDisplayedForTheBooking(string name)
         {
-            throw new PendingStepException();
+            await _bookingPage.ValidateStylistName(name);
         }
 
-        [When("selects the available stylist from the list")]
-        public void WhenSelectsTheAvailableStylistFromTheList()
+        [When("the user selects the desired time slot for the booking {string}")]
+        public async Task WhenTheUserSelectsTheDesiredTimeSlotForTheBooking(string serviceTime)
         {
-            throw new PendingStepException();
+            await _bookingPage.SelectTime(serviceTime);
         }
 
-        [Then("the user should see the selected stylist displayed for the booking")]
-        public void ThenTheUserShouldSeeTheSelectedStylistDisplayedForTheBooking()
+        [Then("the user should see the booking displayed in the calendar view {string}")]
+        public async Task ThenTheUserShouldSeeTheBookingDisplayedInTheCalendarView(string test)
         {
-            throw new PendingStepException();
+            await _bookingPage.ViewAppointment(test);
         }
 
-        [When("the user clicks to select the time for the booking")]
-        public void WhenTheUserClicksToSelectTheTimeForTheBooking()
+        [Then("The user should be able to confirm the appointment{string}")]
+        public async Task ThenTheUserShouldBeAbleToConfirmTheAppointment(string test)
         {
-            throw new PendingStepException();
+            await _bookingPage.ConfirmAppointment(test);
         }
-
-        [When("selects the desired time slot for the booking")]
-        public void WhenSelectsTheDesiredTimeSlotForTheBooking()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the selected time displayed for the booking")]
-        public void ThenTheUserShouldSeeTheSelectedTimeDisplayedForTheBooking()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the booking displayed in the calendar view")]
-        public void ThenTheUserShouldSeeTheBookingDisplayedInTheCalendarView()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the sidebar should close automatically")]
-        public void ThenTheSidebarShouldCloseAutomatically()
-        {
-            throw new PendingStepException();
-        }
-
-        [When("the user clicks on the created booking in the calendar")]
-        public void WhenTheUserClicksOnTheCreatedBookingInTheCalendar()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the booking details displayed")]
-        public void ThenTheUserShouldSeeTheBookingDetailsDisplayed()
-        {
-            throw new PendingStepException();
-        }
-
-
-        [Then("the booking status should change to {string}")]
-        public void ThenTheBookingStatusShouldChangeTo(string confirmed)
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the modal for checkout or rebook should appear")]
-        public void ThenTheModalForCheckoutOrRebookShouldAppear()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the checkout page with booking details")]
-        public void ThenTheUserShouldSeeTheCheckoutPageWithBookingDetails()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the modal to confirm payment")]
-        public void ThenTheUserShouldSeeTheModalToConfirmPayment()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should see the payment confirmation message")]
-        public void ThenTheUserShouldSeeThePaymentConfirmationMessage()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("should view the modal to enter the email address {string} for receipt")]
-        public void ThenShouldViewTheModalToEnterTheEmailAddressForReceipt(string p0)
-        {
-            throw new PendingStepException();
-        }
-
-        [When("the user enters the email address {string}")]
-        public void WhenTheUserEntersTheEmailAddress(string p0)
-        {
-            throw new PendingStepException();
-        }
-
-
-        [Then("the user should see a message confirming that the receipt has been sent to {string}")]
-        public void ThenTheUserShouldSeeAMessageConfirmingThatTheReceiptHasBeenSentTo(string p0)
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the user should be redirected to the calendar view")]
-        public void ThenTheUserShouldBeRedirectedToTheCalendarView()
-        {
-            throw new PendingStepException();
-        }
-
-        [When("the user clicks on the booking")]
-        public void WhenTheUserClicksOnTheBooking()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("the sidebar should open displaying the booking details as checked out")]
-        public void ThenTheSidebarShouldOpenDisplayingTheBookingDetailsAsCheckedOut()
-        {
-            throw new PendingStepException();
-        }
-
-
 
     }
 }
