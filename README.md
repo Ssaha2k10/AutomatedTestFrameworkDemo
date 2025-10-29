@@ -1,4 +1,4 @@
-# AutomatedTestFramework - DemoSlk
+# AutomatedTestFrameworkDemo-Slick
 
 End-to-end UI test automation framework for salon management application built with C#, Playwright for .NET, Reqnroll (BDD), and NUnit.
 
@@ -40,7 +40,7 @@ Before running the project, ensure you have the following installed:
 
 ### 1. Clone the Repository:
 ````````
-git clone https://github.com/Ssaha2k10/AutomatedTestFramework-DemoSlk.git.
+git clone https://github.com/Ssaha2k10/TestFrameworkDemo-Slick.git.
 `````````
 2. Restore NuGet packages:
 ````````
