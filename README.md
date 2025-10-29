@@ -40,7 +40,7 @@ Before running the project, ensure you have the following installed:
 
 ### 1. Clone the Repository:
 ````````
-git clone https://github.com/Ssaha2k10/TestFrameworkDemo-Slick.git.
+git clone https://github.com/Ssaha2k10/AutomatedTestFrameworkDemo.git.
 `````````
 2. Restore NuGet packages:
 ````````
