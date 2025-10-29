@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - DemoSlk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj": {}
+    "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - Slk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - DemoSlk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj": {
+    "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - Slk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - DemoSlk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj",
+        "projectUniqueName": "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - Slk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj",
         "projectName": "AutomatedTestFramework_Slick",
-        "projectPath": "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - DemoSlk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj",
+        "projectPath": "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - Slk\\AutomatedTestFramework -Slick\\AutomatedTestFramework_Slick.csproj",
         "packagesPath": "C:\\Users\\Ssaha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - DemoSlk\\AutomatedTestFramework -Slick\\obj\\",
+        "outputPath": "C:\\Users\\Ssaha\\source\\repos\\AutomatedTestFramework - Slk\\AutomatedTestFramework -Slick\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -107,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
