@@ -1,4 +1,4 @@
-# AutomatedTestFrameworkDemo-Slick
+# AutomatedTestFrameworkDemo
 
 End-to-end UI test automation framework for salon management application built with C#, Playwright for .NET, Reqnroll (BDD), and NUnit.
 
