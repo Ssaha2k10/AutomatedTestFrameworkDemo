@@ -104,7 +104,7 @@ namespace AutomatedTestFramework.Pages
 
         public async Task SelectTime(string time)
         {
-            var morningBtn = _page.GetByRole(AriaRole.Button, new() { Name = "Morning", Exact = true });
+            var morningBtn = _page.GetByRole(AriaRole.Button, new() { Name = "9:00 AM", Exact = true }).First;
             await SelectTimeBtn.ClickAsync();
             await morningBtn.ClickAsync();
             var timeLocator = _page.Locator(".item-option div").Filter(new() { HasText = time }).First;
